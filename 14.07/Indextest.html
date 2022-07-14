@@ -39,6 +39,41 @@
 					.style.display = "none";
 		}
 	</script>
+    <style>
+
+		/* Set display to none for image*/
+		#image {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<h3>Click me</h3>
+
+		<!-- Add id to image -->
+		<img id="image" src=
+"Fanta.png"
+			alt="PNG image" />
+	</div>
+
+	<button type="button"
+		onclick="show()" id="btnID">
+		Show Image
+	</button>
+
+	<script>
+		function show() {
+
+			/* Access image by id and change
+			the display property to block*/
+			document.getElementById('image')
+					.style.display = "block";
+
+			document.getElementById('btnID')
+					.style.display = "none";
+		}
 </body>
 
 </html>
