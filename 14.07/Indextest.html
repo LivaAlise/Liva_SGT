@@ -24,24 +24,23 @@
 		Show Image
 	</button>
 
+	<script>
+		function show() {
 
-    <style>
+			/* Access image by id and change
+			the display property to block*/
+			document.getElementById('image')
+					.style.display = "block";
 
-		/* Set display to none for image*/
-		#image {
-			display: none;
+			document.getElementById('btnID')
+					.style.display = "none";
 		}
-	</style>
-</head>
-
-<body>
+	</script>
 	<div>
 		<h3>Click me</h3>
 
-		<!-- Add id to image -->
-		<img id="image" src=
-"Sprite"
-			alt="PNG image" />
+		<img id="image" src="A_small_cup_of_coffee.JPG"
+			alt="JPG image" />
 	</div>
 
 	<button type="button"
@@ -60,6 +59,8 @@
 			document.getElementById('btnID')
 					.style.display = "none";
 		}
+	</script>
+   
 </body>
 
 </html>
