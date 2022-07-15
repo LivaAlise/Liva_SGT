@@ -2,65 +2,27 @@
 <html>
 
 <head>
-	<style>
-
-		#image {
-			display: none;
-		}
-	</style>
+  <meta charset="UTF-8" />
+  <title> Index Test</title>
+  <h1>Soft drinks menu</h1>
 </head>
 
 <body>
-	<div>
-		<h1>Index test</h1>
-		<h3>Click me</h3>
+  <table>
+    <tr>
+      <td>
+        <button type="button"><a href="tea.html">Tea</a> </button> <br>
+        <button type="button"><a href="Coffee.html">Coffee</a> </button><br>
+        <button type="button"><a href="soft drinks.html">Soft drinks</a></button><br>
+        <button type="button"><a href="juice.html">Juice</a></button><br>
+        <button type="button"><a href="water.html">Water</a></button><br>
 
-		<img id="image" src="cola.jpg"
-			alt="JPG image" />
-	</div>
+      </td>
+      <td>
 
-	<button type="button"
-		onclick="show()" id="btnID">
-		Show Image
-	</button>
-
-	<script>
-		function show() {
-
-			/* Access image by id and change
-			the display property to block*/
-			document.getElementById('image')
-					.style.display = "block";
-
-			document.getElementById('btnID')
-					.style.display = "none";
-		}
-	</script>
-	<div>
-		<h3>Click me</h3>
-
-		<img id="image" src="A_small_cup_of_coffee.JPG"
-			alt="JPG image" />
-	</div>
-
-	<button type="button"
-		onclick="show()" id="btnID">
-		Show Image
-	</button>
-
-	<script>
-		function show() {
-
-			/* Access image by id and change
-			the display property to block*/
-			document.getElementById('image')
-					.style.display = "block";
-
-			document.getElementById('btnID')
-					.style.display = "none";
-		}
-	</script>
-   
+      </td>
+    </tr>
+  </table>
 </body>
 
 </html>
