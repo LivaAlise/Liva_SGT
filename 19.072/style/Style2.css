@@ -1,0 +1,38 @@
+* {
+    font-style: italic;
+  }
+  
+  p {
+    color:black;
+    border: 2px solid black;
+    text-align: center;
+    }
+  
+  @media(max-width:500px){
+  h1 {
+   background-color: lavender;
+  }
+  .centered {
+    text-align: center;
+  }
+  li{
+    display: block;
+  }
+  
+  }
+  
+  @media(min-width:501px){
+    h1 {
+       background-color:lavenderblush;
+    }
+    .centered {
+        text-align: center;
+    }
+    nav ul{
+      list-style: none;
+      text-decoration: none;
+      text-align: center;
+      padding: 0;
+      display:flex;
+    }
+    }
