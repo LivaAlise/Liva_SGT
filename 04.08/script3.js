@@ -28,6 +28,8 @@ while (true) {
     
     a.push(element);
 }
+alert(a)
+
 if (a<0) {
     alert("Error! The number entered is negative!"+ a)
 }
