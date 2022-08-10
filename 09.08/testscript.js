@@ -3,29 +3,29 @@ function add() {
     const Number2 = document.getElementById("Number2").value;
     const calculation = document.getElementById("calculation").value;
     calculation.innerText = Number(Number1) + Number(Number2);
-    alert("The result is" + add);
+    alert("The result is" + calculation);
 }
 
 function subtract () {
     const Number1 = document.getElementById("Number1").value;
     const Number2 = document.getElementById("Number2").value;
     const calculation = document.getElementById("calculation").value;
-    calculation.innerText = Number(Number1) - Number(Number2);
-    alert("The result is" + subtract)
+    calculation.innerText = Number(Number1) + Number(Number2);
+    alert("The result is" + calculation)
 }
 
 function multiply () {
     const Number1 = document.getElementById("Number1").value;
     const Number2 = document.getElementById("Number2").value;
     const calculation = document.getElementById("calculation").value;
-    calculation.innerText = Number(Number1) * Number(Number2);
-    alert("The result is" + multiply)
+    calculation.innerText = Number(Number1) + Number(Number2);
+    alert("The result is" + calculation)
 }
 
 function divide () {
     const Number1 = document.getElementById("Number1").value;
     const Number2 = document.getElementById("Number2").value;
     const calculation = document.getElementById("calculation").value;
-    calculation.innerText = Number(Number1) / Number(Number2);
-    alert("The result is" + divide)
+    calculation.innerText = Number(Number1) + Number(Number2);
+    alert("The result is" + calculation)
 }
