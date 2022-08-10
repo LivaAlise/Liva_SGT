@@ -1,0 +1,30 @@
+let entry = "";
+let array = [];
+while (entry != "STOP") {
+    entry = prompt("Enter array value (enter STOP to stop!)")
+    if (entry == " STOP")
+        break;
+
+    if (!Number(entry)) {
+        alert("The entry is not a number");
+        continue;
+    }
+    let number = Number(entry);
+    array.push(number);
+}
+alert(sortNumberArray(array).toString());
+
+function sortNumberArray(array) {
+for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+        if (array[j] > array[j + 1]) {
+            let bufferVal = array[j];
+            array[j] = array[j + 1];
+            array[j + 1] = bufferVal;
+        }
+    }
+}
+
+return array;
+
+}
