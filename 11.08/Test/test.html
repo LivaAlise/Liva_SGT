@@ -9,25 +9,31 @@
     `<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="testscript.js"></script>
     <link href= "test.css" rel="stylesheet">
+    <title>Dropdown filter exercise</title>
     <h1> Northern European countries and capitols</h1>
 
 </head>
-
-<body>
-    <p>Click on the button to open the dropdown menu and filter the Countries A-Z or Z-A.</p>
+ <body>
+    <p>Click on the button to open the dropdown menu and filter the Countries</p>
     <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Dropdown</button>
         <div id="myDropdown" class="dropdown-content">
-          <a href="#A-Z">A-Z</a>
-          <a href="#UK">United Kingdom</a>
-         </div>
-      </div>
+            <button onclick="filterCountriesByRegion('All')"> All</button>
+            <button onclick="filterCountriesByRegion('UnitedKingdom')"> United Kingdom</button>
+            <button onclick="filterCountriesByRegion('BalticStates')"> Baltic States</button>
+            <button onclick="filterCountriesByRegion('Jutland')"> Jutland</button>
+            <button onclick="filterCountriesByRegion('Scandinavia')"> Scandinavia</button></div>
+
+          
   <table id="Table">
+    <thead>
   <tr class="header">
     <th style="width:60%;">Country</th>
     <th style="width:40%;">Capitol</th>
   </tr>
-  <tr>
+</thead>
+<tbody id="dataToFilter">
+<tr>
     <td>Latvia </td>
     <td>Riga</td>
   </tr>
@@ -73,13 +79,15 @@
   </tr>
   <tr>
     <td>Ireland </td>
-    <td>Belfast</td>
+    <td>Dublin</td>
   </tr>
   <tr>
     <td>Scotland </td>
     <td>Cardiff</td>
   </tr>
+</tbody>
 </table>
+
             
 </body>
 

@@ -1,22 +1,47 @@
+let UnitedKingdom = "England"; "Wales", "Scotland"; "Ireland";
+let BalticStates = "Latvia"; "Lithuania";"Estonia";
+let Jutland = "Finnland"; "Germany";
+let Scandinavia = "Sweeden"; "Norway"; "Finnland";
+
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
-  
-function filterFunction() {
-    var input, filter, div, a, i;
-    input = document.getElementById("Country");
-    filter = input.value.alphabeticalOrder(["A", "C", "E","F", "G","I", "L", "N", "S", "W"]);
-    div = document.getElementById("myDropdown");
-    a = div.getElementsByTagName("A-Z");
+
+  function filterCountriesByRegion(region) {
+    let countries = document.getElementById("dataToFilter");
+
+    for (let country of countries.children) {
+	let countryRegion = country.children[1].innerText;
+
+	if (countryRegion == region) {
+	    country.style.display = "";
+	}
+	else {
+	    country.style.display = "none";
+	}
+    }
+}
+
+
+
+    /* function filterCountriesByRegion(region) {
+        let countries = document.getElementById("dataToFilter");
     
-    for (i = 0; i < a.length; i++) {
-      txtValue = a[i].textContent || a[i].innerText;
-      if (txtValue.alphabeticalOrder().indexOf(filter) > -1) {
-        a[i].style.display = "";
-      } else if (input.value.UnitedKingdom().indexof(filter)) {
-        
+        for (let country of countries.children) {
+        let countryRegion = country.children[1].innerText;
+            
+        if (countryRegion == "UnitedKingdom") {
+            country.style.display = "England", "Ireland", "Wales", "Scotland";
+        }    
+        else if (countryRegion == BalticStates) {
+            country.style.display = "Latvia", "Lithuania", "Estonia";
+        }
+        else if (countryRegion == Jutland) {
+            country.style.display = "Finnland", "Germany";
+        }   
+        else if (countryRegion == Scandinavia) {
+            country.style.display = "Finnland", "Norway", "Sweeden";
         }
       }
-     }
-     }
-  
+     }*/
+    
