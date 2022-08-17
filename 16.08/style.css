@@ -1,5 +1,5 @@
 body {
-    margin: 116;
+    margin: 0;
     padding: 0;
     background-color: pink;
 }
@@ -15,7 +15,7 @@ p {
 
 .calculator-grid {
     display: grid;
-    border: 5px solid black;
+    border: none;
     justify-content: center;
     align-content: center;
     grid-template-columns: repeat(4, 90px);
