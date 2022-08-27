@@ -16,28 +16,30 @@
     <p>Please try out this calculator!</p>
     <div class="calculator-grid">
         <div class="output">
-            <div previous-operand class="previous-operand"></div>
-            <div current-operand class="current-operand"></div>
+            <!-- <div value1 class="value1"></div> -->
+            <!-- <div value2 class="value2"></div> -->
+            <output id="display" type="text" class="calculator-screen z-depth-1" value="" >0</output><br>
         </div>
-        <button all-clear class="span-two">AC</button>
-        <button delete>DEL</button>
-        <button operation>÷</button>
-        <button number >1</button>
-        <button number>2</button>
-        <button number>3</button>
-        <button operation>*</button>
-        <button number>4</button>
-        <button number>5</button>
-        <button number>6</button>
-        <button operation>+</button>
-        <button number>7</button>
-        <button number>8</button>
-        <button number>9</button>
-        <button operation>-</button>
-        <button number>.</button>
-        <button number>0</button>
-        <button equals class="span-two">=</button>
-    </div>  
+        <button onclick="initialize()" class="span-two">AC</button>
+        <button onclick="backspace()">DEL</button>
+        <button onclick="rememberOperator('+')">+</button>
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="rememberOperator('-')">-</button>
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="rememberOperator('*')">&times;</button>
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="rememberOperator('/')">/</button>
+        <button onclick="append('.')">.</button>
+        <button onclick="append('0')">0</button>
+        <button onclick="compute()" class="span-two">=</button>
+        <!-- <output id="calculation"></output> -->
+    </div>
 </body>
 
 </html>

@@ -1,71 +1,81 @@
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
-const previousOperand = document.querySelector("[previous-operand]")
-const currentOperand = document.querySelector("[current-operand]")
-const numberButtons = document.querySelectorAll("[number]")
-const operationButtons = document.querySelectorAll("[operation]")
-const acButton = document.querySelector("[all-clear]")
-const deleteButton = document.querySelector("[delete]")
-const equalsButton = document.querySelector("[equals]")
+let operator = null;
+let prev = null;
 
-class Calculator {
-  constructor(previousOperandTextElement, currentOperandTextElement) {
-    this.previousOperandTextElement = previousOperandTextElement
-    this.currentOperandTextElement = currentOperandTextElement
-    this.clear()
+function initialize() {
+  console.log("init");
+  operator = null;
+  prev = null;
+  document.getElementById("display").value = "0";
 }
+
+function backspace() {
+  console.log("backspace");
+  let display = document.getElementById("display");
+  display.value = display.value.slice(0, -1);
+
+  if (display.value.length == 0) {
+    display.value = "0";
+  }
 }
-numberButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    calculator.appendNumber(button.innerText)
-    calculator.updateDisplay()
-  })
-})
 
-operationButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    calculator.chooseOperation(button.innerText)
-    calculator.updateDisplay()
-  })
-})
+function append(character) {
+  console.log("appending '" + character + "'");
+  let display = document.getElementById("display");
 
-acButton (button=> {
-  button.addEventListener("click", () => {
-    calculator.clear()
-    calculator.updateDisplay()
-  })
-  })
-  
-  
-deleteButton.addEventListener ("click", button => {
-  calculator.deleteLastEntry()
-  calculator.updateDisplay()
-})
+  if (prev !== null) {
+    display.value = "0";
+  }
 
-equalsButton.addEventListener("click", button => {
-  calculator.compute()
-  calculator.updateDisplay()
-})
+  if (character == ".") {
+    // don't append '.' twice!
+    if (display.value.indexOf(".") == -1) {
+      display.value += character;
+    }
+  }
+  else if (display.value == "0") {
+    // don't keep leading zero
+    display.value = character;
+  }
+  else {
+    display.value += character;
+  }
+}
+
+function rememberOperator(op) {
+  console.log("remembering '" + op + "'");
+  operator = op;
+  let display = document.getElementById("display");
+  prev = display.value;
+}
 
 function compute() {
-    let computation;
-    if (isNaN(previousOperand) || isNaN(currentOperand)) 
-    return
-    switch (this.operation) {
-      case '+':
-        computation = prev + current
-        break
-      case '-':
-        computation = prev - current
-        break
-      case '*':
-        computation = prev * current
-        break
-      case '÷':
-        computation = prev / current
-        break
-      default:
-        return
-    }
+  console.log("compute");
+
+  let display = document.getElementById("display");
+  const current = display.value;
+
+  let computation;
+
+  switch (operator) {
+    case '+':
+      computation = +prev + +current;
+      break;
+    case '-':
+      computation = prev - current;
+      break;
+    case '*':
+      computation = prev * current;
+      break;
+    case '/':
+      computation = prev / current;
+      break;
+    default:
+      console.log("unexpected operator '" + operator + "'");
+      return;
+  }
+
+  display.value = computation;
+  prev = display.value;
 }
 
 
