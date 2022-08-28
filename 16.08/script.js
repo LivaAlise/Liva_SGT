@@ -1,10 +1,12 @@
 let operator = null;
 let prev = null;
+let needToClearDisplay = false;
 
 function initialize() {
   console.log("init");
   operator = null;
   prev = null;
+  needToClearDisplay = false;
   document.getElementById("display").value = "0";
 }
 
@@ -22,8 +24,9 @@ function append(character) {
   console.log("appending '" + character + "'");
   let display = document.getElementById("display");
 
-  if (prev !== null) {
+  if (needToClearDisplay) {
     display.value = "0";
+    needToClearDisplay = false;
   }
 
   if (character == ".") {
@@ -46,6 +49,7 @@ function rememberOperator(op) {
   operator = op;
   let display = document.getElementById("display");
   prev = display.value;
+  needToClearDisplay = true;
 }
 
 function compute() {
@@ -56,27 +60,30 @@ function compute() {
 
   let computation;
 
-  switch (operator) {
-    case '+':
-      computation = +prev + +current;
-      break;
-    case '-':
-      computation = prev - current;
-      break;
-    case '*':
-      computation = prev * current;
-      break;
-    case '/':
-      computation = prev / current;
-      break;
-    default:
-      console.log("unexpected operator '" + operator + "'");
-      return;
+  if (prev === null) {
+    computation = current;
+  }
+  else {
+    switch (operator) {
+      case '+':
+        computation = +prev + +current;
+        break;
+      case '-':
+        computation = prev - current;
+        break;
+      case '*':
+        computation = prev * current;
+        break;
+      case '/':
+        computation = prev / current;
+        break;
+      default:
+        console.log("unexpected operator '" + operator + "'");
+        return;
+    }
   }
 
   display.value = computation;
   prev = display.value;
+  needToClearDisplay = true;
 }
-
-
-
